@@ -5,9 +5,15 @@ const app = express()
 app.set('view engine', 'ejs')
 
 app.get("/",(req, res) =>{
+    var produtos = [
+        {nome: "Livro python", preco: 50.00},
+        {nome: "Caneca nodejs", preco: 25.30}
+    ]
     res.render("index", {
         nome: "Carlos Arruda",
-        linguagem: "Python"
+        linguagem: "Python",
+        msg: false,
+        produtos: produtos
     })
 })
 

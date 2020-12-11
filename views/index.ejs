@@ -8,6 +8,18 @@
 <body>
     <h1>Lista de peguntas</h1>
     <p>Nome: <%= nome %> </p>
-    <p>Liguagem favorita: <%= linguagem %></p>
+    <p>Liguagem favorita: <%=linguagem %></p>
+
+    <% if(msg) { %>
+        <h1>Houve um erro inesperado</h1>
+    <% } else { %>
+        <h3>Tudo ok!</h3>
+    <% } %>
+
+    <ul>
+        <% produtos.forEach(function(produto){ %>
+            <li><%=produto.nome%>-<%=produto.preco%></li>
+        <% }) %>
+    </ul>
 </body>
 </html>
