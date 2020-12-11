@@ -3,6 +3,8 @@ const app = express()
 
 // definindo qual engine para renderizar htmls a ser usada
 app.set('view engine', 'ejs')
+// definindo pasta dos arquivos estaticos
+app.use(express.static('public'))
 
 app.get("/",(req, res) =>{
     var produtos = [
