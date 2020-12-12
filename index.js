@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 
+// Model de pergutas
+const perguntaModel = require('./database/Pergunta')
+
 // conectando ao banco
 const connection = require('./database/database')
 connection.authenticate()
