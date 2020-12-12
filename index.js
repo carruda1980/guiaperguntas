@@ -2,6 +2,16 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 
+// conectando ao banco
+const connection = require('./database/database')
+connection.authenticate()
+    .then(()=>{
+        console.log("Conexão com banco realizada com sucesso!")
+    })
+    .catch((msgError) =>{
+        console.log(msgError)
+    })
+
 // definindo qual engine para renderizar htmls a ser usada
 app.set('view engine', 'ejs')
 // definindo pasta dos arquivos estaticos
