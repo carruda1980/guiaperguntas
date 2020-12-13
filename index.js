@@ -3,7 +3,7 @@ const app = express()
 const bodyParser = require('body-parser')
 
 // Model de pergutas
-const perguntaModel = require('./database/Pergunta')
+const Pergunta = require('./database/Pergunta')
 
 // conectando ao banco
 const connection = require('./database/database')
@@ -36,7 +36,13 @@ app.get("/perguntar", (req, res) =>{
 app.post("/salvarpergunta", (req, res) =>{
     var titulo = req.body.titulo;
     var descricao = req.body.descricao;
-    res.send("Formulário recebido com sucesso!" + titulo)
+
+    Pergunta.create({
+        titulo: titulo,
+        descricao: descricao
+    }).then(() => {
+        res.redirect('/')
+    })
 })
 
 app.listen(8080, () =>{
