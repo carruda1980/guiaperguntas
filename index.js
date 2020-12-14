@@ -4,6 +4,8 @@ const bodyParser = require('body-parser')
 
 // Model de pergutas
 const Pergunta = require('./database/Pergunta')
+// Model de respostas
+const Resposta = require('./database/Resposta')
 
 // conectando ao banco
 const connection = require('./database/database')
