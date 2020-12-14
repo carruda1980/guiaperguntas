@@ -4,6 +4,15 @@
     <div class="container">
         <h3><%= pergunta.titulo %></h3>
         <p><%= pergunta.descricao %></p>
+
+        <form>
+            <h3>Resposta:</h3>
+            <textarea class="form-control" name="corpo">
+
+            </textarea>
+            <br>
+            <button type="submit" class="btn btn-primary">Responder</button>
+        </form>
     </div>
 </body>
 <%- include ('partials/footer.ejs') %>
