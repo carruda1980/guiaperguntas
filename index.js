@@ -53,6 +53,18 @@ app.post("/salvarpergunta", (req, res) =>{
     })
 })
 
+app.post("/salvarresposta", (req, res) =>{
+    var perguntaId = req.body.perguntaId
+    var corpo = req.body.corpo
+
+    Resposta.create({
+        corpo: corpo,
+        perguntaId: perguntaId
+    }).then(() =>{
+        res.redirect("/pergunta/" + perguntaId)
+    })
+})
+
 app.get("/pergunta/:id", (req, res) => {
     var id = req.params.id
     Pergunta.findOne({
